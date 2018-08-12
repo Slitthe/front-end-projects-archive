@@ -1,0 +1,523 @@
+/*General*/
+ html { /*Removes annoying highlight color on links and div on touch */
+  -webkit-tap-highlight-color:transparent;
+}
+body {
+	padding-top: 1.5%;
+	margin: 0;
+	font-family: "Encode Sans Expanded", sans-serif;
+	font-size: 36px; /* Body font-size controls the scaling of most game elements */
+	font-size: 4vh;
+	background-color: gray;
+}
+
+:link, :visited {
+	color: #241d77;
+}
+
+a:hover {
+	color: #2c20bf;
+}
+
+button {
+	background: transparent;
+	border: 1px solid rgb(0, 0 ,200);
+	border: 1px solid rgba(0, 0 , 200, 0.7);
+	padding: 0.3em 0.5em;
+	font-size: 0.6em;
+	letter-spacing: 0.08em;
+}
+
+button:active, button:focus { /* Removes default outline styling*/
+	outline: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+p {
+	margin: 0;
+}
+
+h1 { /* The page's h1 acts is the game title */
+	border: 0.03em solid gray;
+	display: inline-block;
+	padding: 0.6em;
+	border-radius: 1em;
+	font-family: 'Nova Flat', sans-serif;
+	color: black;
+}
+
+.active, button:hover { /* Styling for active and hovering buttons */
+	background-color: rgb(0, 0, 200);
+	background-color: rgba(0, 0, 200, 0.7);
+	color: white;
+}
+
+.font-bold {
+	font-weight: bold;
+}
+
+.results-text {
+	font-weight: bold;
+	font-size: 1.1em;
+	color: black;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.bottom-radius-only {
+	border-radius: 0;
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+}
+
+
+/*Game area*/
+#game-area { /*Make the game area unselectable*/
+	-moz-user-select: -moz-none;
+	  -webkit-user-select: none;
+	      -ms-user-select: none;
+	       -o-user-select: none;
+		  user-select: none;
+}
+
+#game-area { /* Using multiple units as fallback */
+	width: 80%;
+	width: 87vw;
+	max-width: 900px;
+	max-width: 87vw;
+	min-width: 300px;
+	min-width: 87vw;
+	height: 550px;
+	height: 85vh;
+	position: relative;
+	margin: 0 auto 1.2em auto;
+	background: white;
+	border: 1px solid #aaa;
+}
+
+
+/* Instructions */
+#instructions {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 0.5em;
+	background: inherit; /* Same background as it's parent div */
+	-webkit-transition-property: bottom;
+		-moz-transition-property: bottom;
+		  -o-transition-property: bottom;
+			  transition-property: bottom;
+	-webkit-transition-duration: 0.8s;
+		-moz-transition-duration: 0.8s;
+		  -o-transition-duration: 0.8s;
+			  transition-duration: 0.8s;
+	-webkit-transition-timing-function: ease-in-out;
+		-moz-transition-timing-function: ease-in-out;
+		  -o-transition-timing-function: ease-in-out;
+			  transition-timing-function: ease-in-out;
+	overflow: hidden;
+	z-index: 15;
+}
+
+#instructions-text {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	-webkit-transform: translateY(-50%); 
+		-moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    -o-transform: translateY(-50%);
+			  transform: translateY(-50%);
+	color: #242424; /* Same color as the accuracy bar */
+	line-height: 1.5em;
+}
+
+#instructions-text li {
+	font-size: 0.7em;
+	list-style-type: none;
+	margin-bottom: 0.35em;
+}
+
+#instructions-text ul {
+	margin: 0;
+	padding: 0.5em;
+}
+
+#instructions-close {
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	-webkit-transform: translateX(50%); /*translate used for proper vertical centering*/
+		-moz-transform: translateX(50%);
+	    -ms-transform: translateX(50%);
+	    -o-transform: translateX(50%);
+			  transform: translateX(50%);
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+	z-index: 20;
+	font-size: 0.75em;
+	border: 0.1em solid #54c354;
+}
+
+#instructions button:hover,#instructions button:active {
+	background-color: #54c354;
+}
+
+
+/*Targets*/
+#targets-container {
+	width: 100%;
+	height: 550px;
+	height: 85vh;
+	position: relative;
+	cursor: url("../images/pointer.png") 15 15, auto; /* Replaces the cursor when mouse is over the targets area, auto used as fallback */
+	z-index: 3; /* Prevents the gun cursor gain focus over the targets-container */
+}
+
+.target { /* Individual target */
+	position: absolute;
+	-webkit-tap-highlight-color: initial;
+	border-radius: 50%;
+	-webkit-transition-property: background;
+		-moz-transition-property: background;
+		  -o-transition-property: background;
+	 		  transition-property: background;
+	/* Controls how fast the color changes when hovered over */
+	-webkit-transition-duration: 0.3s; 
+		-moz-transition-duration: 0.3s;
+	     -o-transition-duration: 0.3s;
+	        transition-duration: 0.3s;
+}
+
+	/* Setting the background images and hover color for the right and wrong targets */
+.correct-target {
+	background-image: url("../images/target.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.correct-target:hover {
+	background-color: #54c354;
+}
+
+.wrong-target {
+	background-image: url("../images/target.png"), url("../images/duck.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.wrong-target:hover {
+	background-color: orange;
+}
+
+
+	/* Targets animation keyframes (controls the target size as well as how fast they change to a certain value*/
+@-webkit-keyframes target {
+	0%   {width: 0.25em; padding-bottom: 0.25em;}
+	50%  {width: 2em;	  padding-bottom: 2em;}
+	75%  {width: 1em; padding-bottom: 1em;}
+	100% {width: 0.25em;	  padding-bottom: 0.25em; }
+}
+
+@-moz-keyframes target {
+	0%   {width: 0.25em; padding-bottom: 0.25em;}
+	50%  {width: 2em;	  padding-bottom: 2em;}
+	75%  {width: 1em; padding-bottom: 1em;}
+	100% {width: 0.25em;	  padding-bottom: 0.25em; }
+}
+
+@-o-keyframes target {
+	0%   {width: 0.25em; padding-bottom: 0.25em;}
+	50%  {width: 2em;	  padding-bottom: 2em;}
+	75%  {width: 1em; padding-bottom: 1em;}
+	100% {width: 0.25em;	  padding-bottom: 0.25em; }
+}
+
+@keyframes target {
+	0%   {width: 0.25em; padding-bottom: 0.25em;}
+	50%  {width: 2em;	  padding-bottom: 2em;}
+	75%  {width: 1em; padding-bottom: 1em;}
+	100% {width: 0.25em;	  padding-bottom: 0.25em; }
+}
+
+
+/*Lives*/
+#lives-container { /* Positioning it absolutely to the game area */
+	position: absolute;
+	width: 4em;
+	top: 0;
+	left: 50%;
+	margin-left: -2em;
+}
+
+
+#lives-container .heart {
+	float: left;
+	width: 1.33em;
+	height: 1.33em;
+	background-image: url("../images/heart.png");
+	background-repeat: no-repeat;
+	background-size: 70% 70%;
+	background-position: center center;
+}
+
+
+/*Buttons and results display*/
+#btn-results-container {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%); /*translate used for proper vertical centering*/
+		-moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    -o-transform: translateY(-50%);
+			  transform: translateY(-50%);
+	width: 100%;
+	z-index: 10; /* Prevents the buttons from (sometimes) becoming unclickable */
+}
+
+button, button:hover { /* Button background transitions */
+	-webkit-transition-duration: 0.2s;
+		-moz-transition-duration: 0.2s;
+	     -o-transition-duration: 0.2s;
+	        transition-duration: 0.2s;
+	-webkit-transition-property: background-color;
+		-moz-transition-property: background-color;
+		  -o-transition-property: background-color;
+		     transition-property: background-color;
+}
+
+
+#btn-container > div { /* Controls the spacing between the button group and the new game button */
+	margin-bottom: 0.6em;
+}
+
+#modes-btn-container button { /*Makes the difficulty buttons appear as a group*/
+	margin: 0;
+	display: inline-block;
+}
+
+#modes-btn-container button:first-child { /* Rounds the edges of the edges of the button group */
+	border-top-left-radius: 0.35em;
+	border-bottom-left-radius: 0.35em;
+}
+#modes-btn-container button:last-child {
+	border-top-right-radius: 0.35em;
+	border-bottom-right-radius: 0.35em;
+}
+
+.game-start-btn-container button{ /* New game button has all the corners rounded */
+	border-radius: 0.35em;
+}
+
+#results-display {
+	color: #2e2e2e;
+	font-size: 0.5em;
+	line-height: 2em;
+}
+
+
+/*Countdown*/
+#countdown {
+	/* Makes the countdown be centered relative to the game area */ 
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    -o-transform: translateY(-50%);
+	        transform: translateY(-50%);
+	font-weight: bold;
+	font-size: 1.2em;
+	display: none;
+}
+
+
+/*Pointer and projectile*/
+#gun-pointer {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0.3em;
+	margin-left: -0.15em;
+	height: 4em;
+	background-image: url("../images/shotgun.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	-webkit-transform-origin: 0.15em 100%;
+		-moz-transform-origin: 0.15em 100%;
+	    -ms-transform-origin: 0.15em 100%;
+	    -o-transform-origin: 0.15em 100%;
+	        transform-origin: 0.15em 100%;
+	display: none;
+	z-index: 2; /* Makes the pointer's z-index less than the target container, making sure the pointer doesn't gain focus over the targets area */
+
+}
+
+#bullet-pointer {
+	position: relative;
+	width: 0.2em;
+	margin-left: 0.05em; /* Horizontally centering the projectile relative to the gun-pointer */
+	height: 0.3em;
+	top: -4em;
+	background-image: url("../images/slug.png");
+	background-size: cover;
+	background-position: center center;
+	-webkit-transition-property: top;
+		-moz-transition-property: top;
+		  -o-transition-property: top;
+			  transition-property: top;
+	/* Transition of the projectile, can be changed to increase/decrease projectile speed */
+	-webkit-transition-duration: 0.075s;
+		-moz-transition-duration: 0.075s;
+	     -o-transition-duration: 0.075s;
+	        transition-duration: 0.075s;
+	display: none;
+
+}
+
+
+/*Accuracy and game duration bars*/
+#accuracy-bar, #accuracy-bar-hits, #accuracy-bar-fails { /*Size of the accuracy bar */
+	height: 0.7em;
+}
+#accuracy-bar {
+	width: 100%;
+	position: relative;
+	/*clear: both; Unnceessary at the time*/
+	background-color:#54c354 ;
+}
+
+#accuracy-bar-hits {
+	float: left;
+	background-color: #54c354;
+}
+
+#accuracy-bar-fails {
+	float: right;
+	background-color: #d96e6e;
+
+}
+
+#accuracy-display {
+	position: absolute;
+	width: 100%;
+	height: 0.7em;
+	font-size: 0.6em;
+	line-height: 1.1em;
+	color: white;
+	text-shadow: 0 0 2px black;
+}
+
+#game-duration-bar {
+	width: 0;
+/*	clear: both;*/
+	height: 0.4em;
+	background: #ccc;
+	/* Transition smoothness of the game duration bar */
+	-webkit-transition-duration: 1.3s;
+		-moz-transition-duration: 1.3s;
+	     -o-transition-duration: 1.3s;
+	        transition-duration: 1.3s;
+	-webkit-transition-property: width;
+		-moz-transition-property: width;
+		  -o-transition-property: width;
+			  transition-property: width;
+	-webkit-transition-timing-function: linear;
+		-moz-transition-timing-function: linear;
+	     -o-transition-timing-function: linear;
+	        transition-timing-function: linear;
+}
+
+
+/*Footer*/
+footer {
+	margin-top: 0.5em;
+	font-size: 0.35em;
+	letter-spacing: 0.03em;
+}
+
+footer address {
+	display: inline-block;
+	padding: 0.1em 0.5em;
+	background-color: #8d8d8d;
+	border-radius: 10px;
+	font-weight: bold;
+	font-style: normal;
+}
+
+footer address a {
+	letter-spacing: 0.07em;
+
+}
+
+footer address .fa-github {
+	font-size: 1.3em;
+}
+
+.info {
+	display: inline-block;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 0.7em;
+	margin: 2px 0 2px 0;
+	cursor: help;
+}
+
+
+/*Media queries*/
+@media(max-width: 700px){
+
+	body {
+		font-size: 25px; /*Chaning the font size of the body to change the size of all the other elements */
+		font-size: 4.5vh;
+		
+	}
+	/* Make the pointer look smaller on small devices (because the general ratio is higher to make text more visible) */
+	#gun-pointer {
+		width: 0.2em;
+		height: 2.5em;
+		margin-left: -0.1em;
+		-webkit-transform-origin: 0.1em 100%;
+			-moz-transform-origin: 0.1em 100%;
+		    -ms-transform-origin: 0.1em 100%;
+		    -o-transform-origin: 0.1em 100%;
+		        transform-origin: 0.1em 100%;
+	}
+
+	#bullet-pointer {
+		width: 0.15em;
+		margin-left: 0.025em;
+		height: 0.2em;
+		top: -2.5em;
+	}
+
+}
+
+@media(max-height: 600px){
+
+	#targets-container, #game-area {
+		height: 350px;
+		height: 85vh;
+	}
+
+	body {
+		padding-top: 5px;
+	}
+
+}
+
+@media (max-width: 350px), (max-height: 500px) {
+	/* Acts as a sort of minimum font-size for the body (which controls the general scaling) for really small devices */
+	body {
+		font-size: 20px; 
+	}
+
+}

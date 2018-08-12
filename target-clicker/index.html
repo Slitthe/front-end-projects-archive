@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clicking Game - Test Your Accuracy By Clicking the Right Targets</title>
+	<meta name="description" content="Clicking and pointing game. Hit the right targets and avoid hitting the ducks.">
+	<meta name="keywords" content="Browser Game,Clicking,Targets,Pointer Game,Infinite Levels">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded|Nova+Flat" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body>
+	<!-- The game container -->
+	<div id="game-area"> 
+
+		<!-- Instructions -->
+		<div id="instructions" class="text-center">
+			<div id="instructions-text">
+				<h1>Hit the Targets</h1>
+				<h2>Play Instructions</h2>
+				<ul>
+					<li><i class="fa fa-angle-right font-bold" aria-hidden="true"></i> Hit as many targets as possible while avoiding hitting any ducks.</li>
+					<li><i class="fa fa-angle-right font-bold" aria-hidden="true"></i> Choose the difficulty.</li>
+					<li><i class="fa fa-angle-right font-bold" aria-hidden="true"></i> After the game starts, normal and duck targets will appear randomly on the screen.</li>
+					<li><i class="fa fa-angle-right font-bold" aria-hidden="true"></i> Level passing percentages is 75% (non-ducks targets).</li>
+					<li><i class="fa fa-angle-right font-bold" aria-hidden="true"></i> Hitting a duck has a penality of 1 life. When there are no more lives left, the game is over (lives will reset each level).</li>
+					<li><i class="fa fa-angle-right font-bold" aria-hidden="true"></i> The targets will appear at an increasingly faster pace as as the levels increase.</li>
+				</ul>
+			</div>
+			<button type="button" id="instructions-close">Close Instructions &#10006;</button>
+		</div>
+		
+		<!-- Targets created by JavaScript are stored inside -->
+		<div id="targets-container">
+		</div>
+
+		<!-- Hearts/lives left -->
+		<div id="lives-container">
+			<div class="heart"></div>
+			<div class="heart"></div>
+			<div class="heart"></div>
+		</div>
+
+		<!-- Buttons and Results Display -->
+		<div id="btn-results-container" class="text-center">
+			<!-- easy, medium, hard and new game buttons container -->
+			<div id="btn-container">
+				<div id="modes-btn-container">
+					<!-- Placed inline to prevent spacing for inline-block display -->
+					<button type="button" id="easy-btn" class="active">Easy</button><button type="button" id="medium-btn">Medium</button><button type="button" id="hard-btn">Hard</button>
+				</div>
+				<div class="game-start-btn-container">
+					<button type="button" id="new-game-btn">New Game</button>
+				</div>
+			</div>
+			<!-- Display the results at the end of the game -->
+			<div id="results-display"></div>
+		</div>
+
+		<!-- Pre-start countdown timer -->
+		<div id="countdown" class="font-bold text-center"></div>
+
+		<!-- The pointer and the projectile that shoots when you click -->
+		<div id="gun-pointer">
+			<div id="bullet-pointer"></div>
+		</div>
+
+
+		<!-- Live accuracy bar and percentages -->
+		<div id="accuracy-bar">
+			<div id="accuracy-display" title="Only account for the targets, not the ducks." class="text-center">Accuracy: <span></span></div>
+			<div id="accuracy-bar-hits"></div>
+			<div id="accuracy-bar-fails"></div>
+		</div>
+
+		<!-- Game elapses time bar -->
+		<div id="game-duration-bar">&nbsp;</div>
+
+	</div> <!-- Game area end -->
+
+	<!-- Footer (contact, author and minor information) -->
+	<footer class="text-center"> 
+		<address> 
+			Created by <a href="https://github.com/Slitthe" target="_blank" title="Link to Github profile." class="font-bold">Silviu Gherman <span class="fa fa-github"></span></a>
+		</address>
+		<br>
+		<p class="info" title="IE10+, Chrome 11+, Firefox 6+, Opera 15+, Safari 5+">Optimezed for modern browsers</p>
+	</footer>
+
+	<script src="scripts/click-game.js"></script>
+</body>
+
+</html>

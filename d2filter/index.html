@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>DOTA 2 Items Filter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Meta Tags -->
+		<meta name="description" content="A filter for DOTA 2's game items. Has the ability to select multiple criterias.">
+		<meta name="keywords" content="DOTA 2, strength, intelligence, agility, attributes, MOBA">
+			<!--OG-->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://slitthe.github.io/dota2-items-filter/">
+		<meta property="og:title" content="DOTA 2 Items Filter">
+		<meta property="og:image" content="https://slitthe.github.io/dota2-items-filter/img/meta-images/og-pic.jpg">
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="397" />
+		<meta property="og:image:height" content="372" />
+		<meta property="og:description" content="Items filter for DOTA 2.">
+		<meta property="og:site_name" content="DOTA 2 Items Filter">
+		<meta property="og:locale" content="en_US">
+			<!--Apple-->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- Links -->
+		<link rel="apple-touch-icon" href="img/meta-images/icon.png">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="icon" type="image/png" href="img/meta-images/favicon.png">
+			<!-- Styles -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Oswald|Josefin+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="css/reset/normalize.css">
+		<link rel="stylesheet" href="css/main.min.css">
+		<!-- Modernizr -->
+		<script src="js/lib/modernizr-custom.js"></script>
+	</head>
+
+	<body>
+
+		<!--[if lte IE 10]>
+				<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+
+		<main>
+			<!-- Main heading -->
+			<div class="container">
+				<h1 class="main_heading"><span>Dota 2</span> items filter</h1>
+			</div>
+			
+			<!-- Filters -->
+			<section class="container filters">
+				<!-- Section Heading -->
+				<h2 class="accesability_only">Filters</h2>
+				<!-- Filter reset button -->
+				<button type="button" class="font_bigger filters_reset_btn no_button_styling">Reset Filters</button>
+				<!-- Filter category -->
+				<div class="filter_category clearfix">
+					<h3 class="filter_heading font_bigger">Attributes</h3>
+					<label class="font_smaller">
+						<input type="checkbox" value="str">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Strength</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="int">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Intelligence</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="agi">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Agility</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="all_atr">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">All Attributes</span>
+					</label>
+				</div>
+
+				<!-- Filter category -->
+				<div class="filter_category clearfix">
+					<h3 class="filter_heading font_bigger">Health/Mana</h3>
+					<label class="font_smaller">
+						<input type="checkbox" value="hp">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Health</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="hp_reg">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">HP Regeneration</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="hp_rest">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">HP Restoration</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="mana">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Mana</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="mana_reg">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Mana Regeneration</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="mana_rest">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Mana Restoration</span>
+					</label>
+				</div>
+
+				<!-- Filter category -->
+				<div class="filter_category clearfix">
+					<h3 class="filter_heading font_bigger">Defensive</h3>
+					<label class="font_smaller">
+						<input type="checkbox" value="armor">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Armor &amp; Penetration</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="mg_resist">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Magic Resist &amp; Reduce</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="evs_acc">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Evasion &amp; Accuracy</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="phy_mg_blk_imm">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Damage block/immunity</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="reflect">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Reflect</span>
+					</label>
+				</div>
+
+				<!-- Filter category -->
+				<div class="filter_category clearfix">
+					<h3 class="filter_heading font_bigger">Offensive</h3>
+					<label class="font_smaller">
+						<input type="checkbox" value="dmg">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Damage</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="crit">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Critical</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="life_steal">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Life Steal</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="attk_speed">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Attack Speed &amp; Reduce</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="mg_dmg">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Magic Damage</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="aoe_dmg">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">AoE Damage</span>
+					</label>
+				</div>
+
+				<!-- Filter category -->
+				<div class="filter_category clearfix">
+					<h3 class="filter_heading font_bigger">Utility</h3>
+					<label class="font_smaller">
+						<input type="checkbox" value="summs_ills">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Summons &amp; Illusions</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="range_inc">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Range Increase</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="cdr">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Cooldown Reduction</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="inv_vision">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Invisibility &amp; Vision</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="gold_exp">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Gold &amp; Experience</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="disable">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Disables</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="mv_speed">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Movement Speed &amp; Slows</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="mobi">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Mobility</span>
+					</label>
+				</div>
+
+				<!-- Filter category -->
+				<div class="filter_category clearfix">
+					<h3 class="filter_heading font_bigger">Item Properties</h3>
+					<label class="font_smaller">
+						<input type="checkbox" value="activable">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Activable</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="toggable">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Toggable</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="consumable">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Consumable</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="shareable">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Shareable</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="start_item">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Starting Items</span>
+					</label>
+				</div>
+
+				<!-- Filter category -->
+				<div class="filter_category clearfix">
+					<h3 class="filter_heading font_bigger">Shop</h3>
+					<label class="font_smaller">
+						<input type="checkbox" value="home">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Home Shop</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="side">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Side Shop</span>
+					</label>
+					<label class="font_smaller">
+						<input type="checkbox" value="secret">
+						<span class="faux_checkbox"></span>
+						<span class="checkbox_text">Secret Shop</span>
+					</label>
+				</div>
+				<!-- Info message for filters -->
+				<div class="info font_small">
+					<p>When selecting a filter, the resulted items will be those who change that in any given way.</p>
+					<p>Example: armor penetration items are also included in the "armor" category.</p></div>
+			</section>
+
+			<!-- Search feature -->
+			<div class="font_big container search_container">
+				<input type="text" class="search_input" id="search_input" placeholder="Search items">
+				<button type="button" class="search_reset_btn no_button_styling" id="search_reset_btn">&times;</button>
+			</div>
+
+			<!-- Items grid -->
+			<section class="container items_container">
+				<!-- Section heading -->
+				<h2>Items</h2>
+				<ol class="items_output"></ol>
+			</section>
+
+			<!-- Full screen tooltip hide bar/button -->
+			<div id="tooltip_hide" class="tooltip_hide hide">
+				<button class="no_button_styling">&times;</button>
+			</div>
+			<div id="hide_body" class="hide_body hide"></div>
+		</main>
+
+		<footer class="info font_small container"> <!-- This sometimes might cause a issue with infinite item tooltip reappearing -->
+		For more information about each item, please visit their corresponding <a href="https://dota2.gamepedia.com/Items" target="_blank">Gamepedia</a>'s page.</footer>
+		
+		<!-- Scripts -->
+		<script src="js/data/data.js"></script> <!-- The items data -->
+		<script src="js/main.min.js"></script>
+	</body>
+</html>

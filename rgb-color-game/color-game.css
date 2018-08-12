@@ -1,0 +1,248 @@
+/*Header background color: rgb(109, 122, 152)*/
+
+/*General styles*/
+html {
+	font-size: 16px;
+}
+body {
+	font-size: 1.2em;/*Change this for global font-size change*/
+	background: rgb(61, 90, 84);
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+h1 {
+	padding: 20px 0;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+
+.header-color {/*Color of the header and the matching elements, such as the buttons active*/
+	background: rgb(109, 122, 152);
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.container {
+	max-width: 800px;
+	min-width: 500px;
+	min-height: 2px;
+	margin: 0 auto;
+}
+
+/*Header*/
+#header {
+	width: 100%;
+	transition-duration: 0.5s;
+	transition-property: background;
+}
+
+.red {color:rgb(255, 0 , 0);}
+.green {color:rgb(0 ,255 , 0);}
+.blue {color:rgb(0, 0 , 255);}
+
+.winning-rgb-text {/*This is also the class for the rgb text popup when you scroll low */
+	border: 1px solid black;
+}
+
+/*Subheader*/
+.subheader {
+	width: 100%;
+	height: 30px;
+	background: white;
+}
+
+.oneThird {/*Container for the buttons and the win/lose text*/
+	box-sizing: border-box;
+	width: 33.3%;
+	display: block;
+	float: left;
+	text-align: center;
+	position: relative;
+}
+
+#game-result {
+	font-weight: bold;
+	text-decoration: underline;
+	line-height: 30px;
+}
+
+
+
+
+	/*Subheade - Buttons*/
+.active {
+	background: rgb(109, 122, 152);
+	color: white;
+}
+
+.pressed-active {
+
+}
+
+button {
+	/*Buttons style reset and additional general styling*/
+	border: none;
+	background: transparent;
+	width: 50%;
+	height: 30px;
+	padding: 5px 10px;
+	box-sizing: border-box;
+	float: left;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 0.8em;
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+}
+
+.custom-button-container {
+	position: relative;
+}
+
+button:focus {
+	outline: none;
+}
+
+.pressed-active{
+	background: rgb(79, 82, 122);
+	color: white;
+}
+
+
+
+	/*Subheader - Custom Vals.*/
+
+#custom-button {
+	position: relative;/*Relative positioning for the custom hidden div*/
+}
+
+.hidden-hover {/*Hidden container*/
+	position: absolute;
+	width: 200px;
+	top: 30px;
+	right: 0%;
+	color: white;
+	display: none;
+	z-index: 100;
+	font-size: 0.8em;
+	
+}
+
+/*#custom-button:hover .hidden-hover, #custom-button:focus .hidden-hover  {
+	display: block;
+}*/
+
+.hide-and-show {
+	display: block;
+}
+
+
+.mode-container label {
+	font-weight: bold;
+	font-size: 1em;
+	font-family: monospace;
+	margin-right: 10px;
+}
+
+.mode-container input { /*Custom easy and hard mode inputs*/
+	margin-bottom: 10px;
+	width: 37px;
+	padding: 3px 6px;
+	border-radius: 5px;
+
+} 
+
+
+/*Javascript activated classes*/
+	/*Change color based on picking the right or wrong tile*/
+#pick-winner {
+	color: green;
+}
+
+#pick-loser{
+	color: red;
+}
+
+	
+.color {/*Standard title styling (big screens)*/
+	box-sizing: border-box;
+	width: 25%;
+	height: 150px;
+	margin: 4%;
+	float: left;
+	border-radius: 15px;
+	transition-duration: 0.5s;
+	transition-property: background;
+}
+
+.container.colors-container {
+	padding: 40px 0;
+}
+
+.hidden-result {/*Scroll RGB text popup*/
+	position: fixed;
+	width: 160px;
+	text-align: center;
+	bottom: 0%;
+	left: 50%;
+	margin-left: -80px;
+	display: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	font-size: 0.8em;
+}
+
+
+/*Responsive*/
+
+@media(max-width: 650px){
+	body {
+		min-width: 275px;
+	}
+	#header {
+		font-size: 0.7em;
+	}
+	.oneThird {
+		width: 100%;
+		display: block;
+		clear: both;
+	}
+	.subheader {
+		height: 90px;/*Makes the height be equal to that of 3 x buttons height*/
+	}
+	.container {
+		min-width: 100%;
+	}
+	.color { /*Make the color tiles appear in one line*/
+		width: 150px;
+		height: 150px;
+		display: block;
+		float: none;
+		clear: both;
+		margin: 30px auto;
+	}
+}
+
+@media (max-width: 400px){
+	.hidden-hover {/*Changes the positioning of the dropdown custom values box on very small devices*/
+		left: 0%;
+		top: 0;
+	}
+}

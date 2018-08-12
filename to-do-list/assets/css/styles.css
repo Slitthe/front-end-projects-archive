@@ -1,0 +1,174 @@
+/* Top to bottom ordering */
+body {
+	font-family: "Robot", sans-serif;
+	background: #74ebd5;  /* fallback for old browsers */
+	/* Gradient gotten from : https://uigradients.com/ */
+	background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+	   background: -moz-linear-gradient(to right, #ACB6E5, #74ebd5);
+		 background: -o-linear-gradient(to right, #ACB6E5, #74ebd5);
+			background: linear-gradient(to right, #ACB6E5, #74ebd5); 
+}
+#container {
+	width: 85%;
+	max-width: 900px;
+	min-width: 350px;
+	margin: 100px auto;
+	background: #f1f1f1;
+	font-size: 18px;
+	color: #333;
+	-webkit-box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.26);
+	   -moz-box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.26);
+			box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.26);
+	-webkit-transition: margin 0.3s linear;
+	   -moz-transition: margin 0.3s linear;
+		 -o-transition: margin 0.3s linear;
+			transition: margin 0.3s linear;
+
+}
+h1 {
+	margin: 0;
+	padding: 15px 20px;
+	color: white;
+	font-size: 23px;
+	text-transform: uppercase;
+	font-weight: normal;
+	background: #4e86c3;
+}
+h1 .fa { /* Any .fa icons will be floated to the right */
+	float: right;
+	padding: 5px;
+	transition: background 0.2s linear;
+	cursor: pointer;
+	border-radius: 15%;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.18);
+	   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.18);
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.18);
+}
+
+h1 .fa:hover {
+	background: #3679c1;
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
+	   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
+}
+h1 .fa:active {
+	-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.18);
+	   -moz-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.18);
+			box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.18);
+}
+input[type="text"] {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+	width: 100%;
+	margin: 0;
+	padding: 10px 20px;
+	font-size: 19px;
+	color: #2a51b2;
+	background: #f1f1f1;
+	border: 2px solid  #f1f1f1; /* Fallback */
+	border: 2px solid rgba(0, 0, 0, 0);
+}
+input[type="text"]:focus {
+	border: 2px solid #7a91ff;
+}
+ul { /* Removes default styling */
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+li {
+	background: white;
+	height: 35px;
+	line-height: 35px;
+	position: relative;
+}
+/* Background color stripes for the li's */
+li:nth-of-type(2n) {
+	background: #f1f1f1;
+}
+
+li {
+	cursor: default;
+}
+
+.completed { /* Toggled class(via JS) upon cliking the li */ 
+	color: gray;
+	text-decoration: line-through;
+}
+/* Delete list item element */
+li > span {
+	display: inline-block;
+	width: 0;
+	margin-right: 20px;
+	opacity: 0;
+	text-align: center;
+	color: white;
+	background: #ee7575;
+	-webkit-transition: 0.2s linear;
+	   -moz-transition: 0.2s linear;
+		 -o-transition: 0.2s linear;
+			transition: 0.2s linear;
+}
+li:hover > span { /* Shows the delete element when any li is hovered*/
+	opacity: 1;
+	width: 40px;
+	cursor: pointer;
+}
+li > span:hover {
+	background: #da4d4d;
+}
+/*Checkbox styling*/
+input[type="checkbox"] { /*Hidden to use custom styling*/
+	display: none;
+}
+.check  { /* Container for the hidden input and the to-be-styled elements*/
+	box-sizing: border-box;
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	width: 25px;
+	height: 25px;
+	-webkit-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		 -o-transform: translateY(-50%);
+			transform: translateY(-50%);
+	line-height: 0;
+	border-radius: 50%;
+	border: 1px solid gray;
+}
+.check > span  { /* Elements which acts as the checkbox*/
+	position: absolute;
+	display: block;
+	width: 0;
+	padding-bottom: 0;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	background: gray;
+	-webkit-transition: 0.2s linear;
+	   -moz-transition: 0.2s linear;
+		 -o-transition: 0.2s linear;
+			transition: 0.2s linear;
+}
+/* Changing styling based on the input "checked" property state (switched via JS) */
+.check input:checked + span {
+	border-color: #319d31;
+}
+.check :checked + span  {
+	background: #319d31;
+	width: 55%;
+	padding-bottom: 55%;
+}
+
+
+@media (max-width: 700px) {
+	#container {
+		width: 95%;
+		font-size: 14px;
+		margin: 50px auto;
+	}
+}

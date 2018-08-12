@@ -1,0 +1,23 @@
+=== Text I created after watching the project introduction video, use it as a sort of guide ===
+-----------------------------------------------------------------------------------------------
+
+
+-- Hit keys on your keyboard
+-----------------------------------------------------------------------------------------------
+-- Also corresponds to an animation in addition to as sound
+
+
+Description:
+	-> Every key has its own sound
+	-> When that key is hit a sound is played
+	-> We also get a colored circle
+	-> Every key has its own color
+	-> The circle animate by shrinking down
+	-> They appear at random points in the window
+
+
+Two libraries are being used:
+== paper.js
+	... used for graphics and animations
+== howler.js
+	... used for sounds

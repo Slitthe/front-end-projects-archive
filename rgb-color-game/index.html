@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width initial-scale=1">
+		<title>RGB Color Game</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="color-game.css">
+	</head>
+
+	<body>
+		<div class="header-color text-center" id="header">
+			<h1>Guess The<br>
+			<span class="red">R</span><span class="green">G</span><span class="blue">B</span>
+			<span class="winning-rgb-text"></span><!-- Displays the RGB color to guess, via JS -->
+			<br>Color
+			</h1>
+		</div>
+
+		<!-- The subheader, containing the reset, custom, easy and hard mode buttons -->
+		<div class="subheader clearfix">
+			<div class="container">
+				
+				<div class="oneThird clearfix">
+					<button type="button" id="reset">Reset</button>
+
+					<div class="custom-button-container">
+						<button type="button" id="custom-button">Custom&nbsp;Vals.</button>
+
+						<div class="hidden-hover header-color">
+							<!-- Custom mode hidden container -->
+							<div class="mode-container">
+								<h4>Custom Modes(how many tiles)</h4>
+								<label for="custom-easy-mode">Easy Mode:</label>
+								<input min="1" type="number" id="custom-easy-mode">
+								<br>
+								<label for="custom-hard-mode">Hard Mode:</label>
+								<input min="1" type="number" id="custom-hard-mode">
+							</div>
+						</div>
+						
+					</div>
+
+				</div>
+
+				<div class="oneThird">
+					<!-- Win or Lose message display, via JS -->
+					<p>&nbsp;<span id="game-result"></span> </p>
+				</div>
+
+				<div class="oneThird">
+					<!-- Easy and Hard mode Buttons -->
+					<button type="button" id="easy">Easy</button>
+					<button type="button" id="hard">Hard</button>
+				</div>
+			</div> <!-- Subheader container end -->
+		</div> <!-- Subheader end -->
+			
+			
+			<!-- Color tiles contianer -->
+			<div class="container colors-container clearfix">
+			</div>
+			
+			<!-- Appears when you scroll too low, displays the rgb color to guess -->
+			<span class="winning-rgb-text hidden-result header-color"></span>
+
+			<script src="color-game.js"></script>
+		</body>
+
+	</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<!-- meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Title -->
+	<title>To-do list</title>
+	<!-- External links -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- Local links -->
+	<link href="assets/css/styles.css" type="text/css" rel="stylesheet">
+	<!-- jQuery -->
+	<script type="text/javascript" src="assets/js/lib/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+	<!-- Main container -->
+	<div id="container">
+		<!-- Header and input toggle icon -->
+		<h1>To-Do List <i class="fa fa-plus fa-minus"></i></h1>
+		<!-- Input (text) to add new elements -->
+		<input type="text" name="new-todo" placeholder="Add New Todo">
+		<!-- New list items created via JS through the input are inserted in the ul -->
+		<ul>
+			<!-- List of some elements to display first time the page is visited (the localStorage is empty) -->
+			<li> <span> <i class="fa fa-times" aria-hidden="true"></i></span> Rewatch "Game of Thrones" for the 3rd time <div class="check"><input type="checkbox"><span></span></div></li>
+			<li> <span> <i class="fa fa-times" aria-hidden="true"></i></span> Get a haircut <div class="check"><input type="checkbox"><span></span></div></li>
+			<li> <span> <i class="fa fa-times" aria-hidden="true"></i></span> Work on your super top-secret project <div class="check"><input type="checkbox"><span></span></div></li>
+		</ul>
+	</div>
+
+	<!-- JS Scripts -->
+	<script type="text/javascript" src="assets/js/todos.js"></script>
+</body>
+
+</html>
