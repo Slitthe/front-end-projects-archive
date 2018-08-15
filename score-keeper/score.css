@@ -1,0 +1,62 @@
+body {
+	font-family: sans-serif;
+	padding: 20px;
+	background: beige;
+}
+
+.padding {
+	padding: 10px 20px;
+}
+
+/*Table scores*/
+table {
+	margin-bottom: 30px;
+}
+
+th {
+	text-align: left;
+}
+
+th:first-of-type,td:first-of-type {
+	padding-right: 20px;
+}
+
+th:nth-of-type(2),td:nth-of-type(2) {
+	padding-left: 20px;
+}
+
+/* styles for the three number values */
+.vt323 {
+	font-family: 'VT323', monospace;
+	background-color: black;
+	padding: 5px 10px;
+	color: red;
+	font-size: 2em;
+	border-radius: 20px;
+}
+
+#totalScore {
+	color: white;}
+
+/*Input and buttons*/
+input {
+	margin-bottom: 20px;
+}
+
+.form-control {
+	width: 30%;
+}
+
+.reset-container {
+	margin-top: 20px;
+}
+
+.playerButton {
+	padding-bottom: 10px;
+}
+
+/*Winner alert class toggle*/
+.winner {
+	color: white;
+	background: green;
+}
