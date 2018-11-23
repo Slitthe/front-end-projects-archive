@@ -53,7 +53,7 @@ function Modes(totalTargets, timeStart, timeLimit, timeDifference, animStart, an
 	// Difficulty modes variables
 var easyMode = 	 new Modes(40, 700, 275, 10, 3.5,   1.65, 0.04, "Easy", 0.99);
 var mediumMode = new Modes(40, 650, 265, 11, 3,   1.61, 0.03, "Medium", 0.985);
-var hardMode = 	 new Modes(40, 600, 250, 14, 2.6, 1.57, 0.03, "Hard", 0.98);
+var hardMode = 	 new Modes(40, 400, 150, 14, 2.1, 1.47, 0.02, "Hard", 0.97);
 var currentMode = JSON.parse(JSON.stringify(easyMode)); // sets the default starting mode
 
 	// Used to make the pressed button have the "active" class
